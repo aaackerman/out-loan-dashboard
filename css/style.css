@@ -1,0 +1,51 @@
+/*FONTS*/
+@font-face {
+  font-family:"Roboto-Black";
+  src: url("../fonts/Roboto-Black.ttf");
+}
+
+@font-face {
+  font-family:"Roboto-Light";
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family:"Roboto Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+
+/*Type*/
+body {
+  background-color: #F4F6F7;
+}
+
+h1 {
+  font-family: 'Roboto Black', sans-serif;
+  font-size: 24px;
+  color: #B3B3B3;
+}
+
+p {
+  font-family: 'Roboto Regular', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  color: #808080;
+}
+
+/*Layout*/
+
+.container-xl {
+  width: 95%;
+}
+
+/*Custom*/
+.panel--third {
+  background: #ffffff;
+}
+
+#test-header {
+  font-family: 'Roboto-Light';
+}
+
+.span-one-third{width:300px;}
+.span-two-thirds{width:620px;}

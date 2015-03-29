@@ -14,7 +14,7 @@
   src: url("../fonts/Roboto-Regular.ttf");
 }
 
-/*Type*/
+/*TYPE & BODY*/
 body {
   background-color: #F4F6F7;
 }
@@ -30,22 +30,182 @@ p {
   font-size: 18px;
   letter-spacing: 1.5px;
   color: #808080;
+  height: 32px;
+}
+
+/*LOGO*/
+#out-loan {
+  background: url("https://i.imgur.com/oRME1fD.png");
 }
 
 /*Layout*/
+.dark-blue {
+  color: #244C51;
+}
+
+.primary-yellow {
+  color: #F5EA14;
+}
+
+.primary-blue {
+  color: #8EE6DB;
+}
 
 .container-xl {
   width: 95%;
 }
 
-/*Custom*/
-.panel--third {
-  background: #ffffff;
+.negative-budget {
+  color: #FF6363;
 }
+
+/*CUSTOM*/
+.panel--margin-top {
+  margin-top: 50px;
+};
 
 #test-header {
   font-family: 'Roboto-Light';
 }
 
-.span-one-third{width:300px;}
-.span-two-thirds{width:620px;}
+@media only screen and (min-width: 768px) {
+  .panel,
+  .panel-xl,
+  .panel-long {
+    height: 220px;
+    margin: 5px;
+    width: 32%;
+    border-radius: 0px;
+  }
+
+  .panel-xl {
+    height: 400px;
+  }
+
+  .panel-long {
+    width: 64.7%;
+  }
+}
+
+.panel-inverse {
+    background: #8EE6DB;
+}
+
+.panel-inverse {
+  background: #8EE6DB;
+}
+
+.p-inverse {
+  font-family: 'Roboto-Light', sans-serif;
+  font-size: 32px;
+  color: #000;
+}
+
+.header-inverse {
+  color: #fff;
+}
+
+select {
+  margin-right:-1.25em;
+  margin-left:-1px;
+  border:none;
+}
+
+hr {
+  border-top: 1px solid black;
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.styled-select,
+.style-selected-sm {
+    font-family: 'Roboto-Black', sans-serif;
+    font-size: 38px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff url("https://i.imgur.com/hqOKo0t.png") no-repeat 80% 50%;
+}
+
+.style-select-sm {
+  margin: 5px;
+  width: 105px;
+  background: #fff url("https://i.imgur.com/hqOKo0t.png") no-repeat 90% 50%;
+}
+
+select {
+  background-position: right 10px top 15px;
+  background-size: 16px 16px;
+  color:white;
+  padding:12px;
+  width:auto;
+  font-size:18px;
+  color: #000;
+  text-align:center;
+  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-radius:3px;
+  -webkit-border-radius:3px;
+  -webkit-appearance: none;
+  border:0;
+  outline:0;
+  -webkit-transition:0.3s ease all;
+     -moz-transition:0.3s ease all;
+      -ms-transition:0.3s ease all;
+       -o-transition:0.3s ease all;
+          transition:0.3s ease all;
+}
+
+select:focus, select:active {
+  border:0;
+  outline:0;
+}
+
+.input-xs {
+  font-family: 'Roboto-Black';
+  font-size: 24px;
+  color: #000;
+  width: 100px;
+  float: right;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.slider-label {
+  margin: 35px 0;
+  color: #000;
+  font-family: 'Roboto-Light', sans-serif;
+  font-size: 24px;
+  border-bottom: 1px solid #000;
+}
+
+/*SLIDERS*/
+#spending-slider {
+  background: #F5EA14;
+  height: 7px;
+  border: none;
+  border-radius: 0px;
+}
+
+#loan-payments-slider {
+  background: #8EE6DB;
+  height: 7px;
+  border: none;
+  border-radius: 0px;
+}
+
+#savings-slider {
+  background: #244C51;
+  height: 7px;
+  border: none;
+  border-radius: 0px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border-radius: 50px;
+  background: inherit;
+  border: none;
+}

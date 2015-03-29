@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Out Loan - Dashboard</title>
+    <title>Out Loan Dashboard</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
@@ -15,47 +18,145 @@
 
   <body>
     <div class="container container-xl">
-      <form name="out-loan-dashboard">
-        <div class="row">
-          <h1 id="test-header">Out Loan</h1>
+      <div class="row">
+        <img src="https://i.imgur.com/oRME1fD.png" class="img img-responsive" width="320px">
+      </div>
 
-          <div class="col-xs-12 col-md-4 panel">
-            <h1>MY PLAN</h1>
-            <label for="payment-plan">repayment plan</label>
-            <select id="payment-plan" name="payment-plan" class="dashboard-value">
-              <option value="standard">Standard</option>
-              <option value="income">Income Based</option>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 panel">
+          <h1>MY PLAN</h1>
+          <div class="text-center">
+            <select id="payment-plan" name="payment-plan" class="dashboard-value styled-select">
+              <option value="standard">standard</option>
+              <option value="income">income based</option>
             </select>
           </div>
+          <hr>
+          <p class="text-center">
+            repayment plan
+          </p>
+        </div>
 
-          <div class="col-xs-12 col-md-4 panel">
-            <h1>MY MONEY</h1>
-            <div>
-              <p>yearly income <small>(before taxes)</small>:</p>
-              <input type="number" class="dashboard-value" id="yearly-income">
-              <p>monthly spending <small>(w/o loans)</small>:</p>
-              <input type="number" class="dashboard-value" id="monthly-spending">
-              <p>monthly savings <small>(desired)</small>:</p>
-              <input type="number" class="dashboard-value" id="monthly-savings">
-            </div>
+        <div class="col-xs-12 col-md-4 panel">
+          <h1>MY MONEY</h1>
+            <p>
+              yearly income <small>(before taxes)</small>:
+              <input type="number" class="input-xs text-center money-value" id="yearly-income" value="38000">
+            </p>
+            <p>
+              monthly spending <small>(w/o loans)</small>:
+              <input type="number" class="input-xs text-center money-value" id="monthly-spending" value="2200">
+            </p>
+            <p>
+              monthly savings <small>(desired)</small>:
+              <input type="number" class="input-xs text-center money-value" id="monthly-savings" value="0">
+            </p>
+        </div>
+
+        <div class="col-xs-12 col-md-4 panel">
+          <h1>MY LOANS</h1>
+          <div>
+            <p>
+              original balance:
+              <input type="number" class="loan-value input-xs text-center" id="original-loan-balance" value="33000">
+            </p>
+            <p>
+              current balance:
+              <input type="number" class="loan-value input-xs text-center" id="current-loan-balance" value="33000">
+            </p>
+            <p>
+              interest rate <small>(average)</small>:
+              <input type="number" class="loan-value input-xs text-center" id="interest-rate" value="5">
+            </p>
           </div>
+        </div>
+      </div>
 
-          <div class="col-xs-12 col-md-4 panel">
-            <h1>MY LOANS</h1>
-            <div>
-              <p>original balance:</p>
-              <p>current balance:</p>
-              <p>interest rate <small>(average)</small>:</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 panel panel-xl panel-inverse">
+          <h1 class="header-inverse">MY SUMMARY</h1>
+          <p class="p-inverse">
+            In 2015 my payment is
+            <span id="monthly-loan-payments">$350</span>
+            per month. It will take me
+            <span id="years-left-to-pay">10</span>
+            years and
+            <span id="months-left-to-pay">0</span> months, and cost an additional
+            <span id="interest-left-to-pay">$9000</span> in interest to pay off my loans.
+          </p>
+        </div>
+
+        <div class="col-xs-12 col-md-6 panel panel-xl panel-long">
+          <h1>
+            MY BUDGET
+            <span id="budget-chart" class="negative-budget">$-695</span>
+          </h1>
+          <p>
+            <label>Monthly</label>
+              <input
+                type="radio"
+                name="budget"
+                value="Monthly"
+                class="time-period"
+                checked>
+
+              <label>Weekly</label>
+              <input
+                type="radio"
+                name="budget"
+                class="time-period"
+                value="Weekly">
+
+              <label>Daily</label>
+              <input
+                type="radio"
+                name="budget"
+                class="time-period"
+                value="Daily">
+          </p>
+
+          <!-- Inner Row -->
+          <div class="row panel--margin-top">
+            <div class="col-xs-12 col-md-4">
+              <canvas id="dashboardChart" width="230" height="230"></canvas>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+              <div>
+                <p>spending</p>
+                <div id="spending-slider"></div>
+                <br>
+              </div>
+
+              <div>
+                <p for="loan-payments-slider">loan payments</p>
+                <div id="loan-payments-slider"></div>
+                <br>
+              </div>
+
+              <div>
+                <p for="savings-slider">savings</p>
+                <div id="savings-slider"></div>
+                <br>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-md-2">
+              <h1 id="spending-amount" class="slider-label">$2200</h1>
+              <h1 id="loan-payments-amount" class="slider-label">$350</h1>
+              <h1 id="savings-amount" class="slider-label">$0</h1>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
 
   </body>
 
   <!-- jQuery Version 1.11.0 -->
   <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/Chart.min.js"></script>
 
   <!-- Custom JS -->
   <script src="js/app.js"></script>

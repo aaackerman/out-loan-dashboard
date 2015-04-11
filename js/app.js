@@ -88,7 +88,7 @@ $(document).ready(function() {
 
     //Loan Calculations
     var interestRateFloat = interestRate * 0.01;
-    var toDivide = currentLoanBalance * (interestRateFloat / 12);
+    var toDivide = originalLoanBalance * (interestRateFloat / 12);
     var exponent = -120;
     var base = (1 + (interestRateFloat / 12));
     var firstPaymentCalculationStep = Math.pow(base, exponent);
@@ -104,7 +104,7 @@ $(document).ready(function() {
     //Timeline
     var totalPaid = originalLoanBalance - currentLoanBalance;
     var monthsPaid = parseInt((totalPaid / monthlyLoanPayments).toFixed(0), 10);
-    var monthsLeftToPay = 120 - monthsPaid;
+    var monthsLeftToPay = (currentLoanBalance / monthlyLoanPayments).toFixed(0);
     var yearsLeftToPay = Math.floor(monthsLeftToPay / 12);
     var monthsAfterYearsLeftToPay = monthsLeftToPay % 12;
     $('#years-left-to-pay').html(yearsLeftToPay);
